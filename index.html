@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineTrack | Login e Autenticação</title>
+    <meta name="description" content="Acesse o sistema de catálogo de filmes e gerenciamento completo com autenticação segura.">
+    
+    <!-- TailwindCSS via CDN (conforme especificado nos requisitos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c',
+                            900: '#7f1d1d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Estilos Customizados Complementares -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="min-h-screen bg-[#0b0f19] flex items-center justify-center p-4 selection:bg-red-500 selection:text-white relative overflow-x-hidden">
+
+    <!-- Efeitos de Luz de Fundo (Glow / Atmosfera Cinematográfica) -->
+    <div class="fixed top-[-10%] left-[-10%] w-[45rem] h-[45rem] bg-red-600/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[45rem] h-[45rem] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+    <!-- Container Central de Autenticação -->
+    <main class="w-full max-w-md my-8">
+        
+        <!-- Logotipo e Cabeçalho do App -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-red-600 to-red-800 text-white shadow-xl shadow-red-950/50 mb-4 border border-red-500/30">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl font-extrabold text-white tracking-tight font-heading">
+                Cine<span class="text-red-500">Track</span>
+            </h1>
+            <p class="text-sm text-gray-400 mt-1">
+                Plataforma de Gestão de Catálogo de Filmes
+            </p>
+        </header>
+
+        <!-- Card principal com vidro fosco -->
+        <section class="
+            glass-panel
+            rounded-3xl
+            p-6
+            sm:p8
+            shadow-2xl
+            border
+            border-gray-800/80
+            relative
+        ">
+
+            <!-- Abas de alternância: Login e Cadastro -->
+            <nav class="
+                flex
+                border-b
+                border-gray-800
+                mb-6
+            " aria-label="Abas de Acesso">
+                <button
+                    id="tab-login"
+                    type="button"
+                    class="w-1/2 pb-3 font-semibold text-sm text-center border-b-2 border-red-600 text-red-500 transition-all focus:outline-none">
+                    Entrar na Conta
+                </button>
+                <button
+                    id="tab-register"
+                    type="button"
+                    class="w-1/2 pb-3 font-semibold text-sm text-center border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition-all focus:outiline-none">
+                    Criar Nova Conta
+                </button>
+            </nav>
+
+            <!-- Box de alerta para erros e avisos de sucesso -->
+            <div
+                id="auth-alert"
+                class="hidden mb-6 p-4 rounded-xl border text-sm flex items-start space-x-3 transition-all">
+                <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span id="auth-alert-message" class="font-medium leading-snug"></span>
+            </div>
+
+            <!-- Formulário de login -->
+            <form id="form-login" class="space-y-4" novalidate>
+                
+            </form>
+
+        </section>
+
+        
+</body>
+</html>
